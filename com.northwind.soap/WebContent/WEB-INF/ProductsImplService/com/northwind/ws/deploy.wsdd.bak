@@ -1,0 +1,32 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ProductsImplService WSDL service -->
+
+  <service name="ProductsImpl" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://ws.northwind.com"/>
+      <parameter name="wsdlServiceElement" value="ProductsImplService"/>
+      <parameter name="schemaQualified" value="http://ws.northwind.com"/>
+      <parameter name="wsdlServicePort" value="ProductsImpl"/>
+      <parameter name="className" value="com.northwind.ws.ProductsImplSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="ProductsImpl"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getProducts" qname="operNS:getProducts" xmlns:operNS="http://ws.northwind.com" returnQName="retNS:getProductsReturn" xmlns:retNS="http://ws.northwind.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="fetchAllProducts" qname="operNS:fetchAllProducts" xmlns:operNS="http://ws.northwind.com" returnQName="retNS:fetchAllProductsReturn" xmlns:retNS="http://ws.northwind.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getProductsWithIDAttribute" qname="operNS:getProductsWithIDAttribute" xmlns:operNS="http://ws.northwind.com" returnQName="retNS:getProductsWithIDAttributeReturn" xmlns:retNS="http://ws.northwind.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="getProducts fetchAllProducts getProductsWithIDAttribute"/>
+
+  </service>
+</deployment>

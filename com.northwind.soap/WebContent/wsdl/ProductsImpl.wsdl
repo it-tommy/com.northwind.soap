@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.northwind.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws.northwind.com" xmlns:intf="http://ws.northwind.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws.northwind.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getProducts">
+    <complexType/>
+   </element>
+   <element name="getProductsResponse">
+    <complexType>
+     <sequence>
+      <element name="getProductsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="fetchAllProducts">
+    <complexType/>
+   </element>
+   <element name="fetchAllProductsResponse">
+    <complexType>
+     <sequence>
+      <element name="fetchAllProductsReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getProductsWithIDAttribute">
+    <complexType/>
+   </element>
+   <element name="getProductsWithIDAttributeResponse">
+    <complexType>
+     <sequence>
+      <element name="getProductsWithIDAttributeReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getProductsResponse">
+
+      <wsdl:part element="impl:getProductsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="fetchAllProductsResponse">
+
+      <wsdl:part element="impl:fetchAllProductsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getProductsWithIDAttributeResponse">
+
+      <wsdl:part element="impl:getProductsWithIDAttributeResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getProductsWithIDAttributeRequest">
+
+      <wsdl:part element="impl:getProductsWithIDAttribute" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="fetchAllProductsRequest">
+
+      <wsdl:part element="impl:fetchAllProducts" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getProductsRequest">
+
+      <wsdl:part element="impl:getProducts" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ProductsImpl">
+
+      <wsdl:operation name="getProducts">
+
+         <wsdl:input message="impl:getProductsRequest" name="getProductsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getProductsResponse" name="getProductsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="fetchAllProducts">
+
+         <wsdl:input message="impl:fetchAllProductsRequest" name="fetchAllProductsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:fetchAllProductsResponse" name="fetchAllProductsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getProductsWithIDAttribute">
+
+         <wsdl:input message="impl:getProductsWithIDAttributeRequest" name="getProductsWithIDAttributeRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getProductsWithIDAttributeResponse" name="getProductsWithIDAttributeResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ProductsImplSoapBinding" type="impl:ProductsImpl">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getProducts">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getProductsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getProductsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="fetchAllProducts">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="fetchAllProductsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="fetchAllProductsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getProductsWithIDAttribute">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getProductsWithIDAttributeRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getProductsWithIDAttributeResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ProductsImplService">
+
+      <wsdl:port binding="impl:ProductsImplSoapBinding" name="ProductsImpl">
+
+         <wsdlsoap:address location="http://localhost:8080/com.northwind.soap/services/ProductsImpl"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
